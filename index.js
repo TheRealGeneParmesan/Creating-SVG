@@ -24,3 +24,20 @@ const imagePrompt = [{
 
 
 ];
+
+function init() {
+    inquirer.prompt(imagePrompt).then((answers) => {
+        const { character, color, shape } = answers;
+        const svgFile = svgTemplate(character, color, shape);
+
+
+        fs.writeFile('./examples/logo.svg', svgFile, (err) => {
+            if (err)
+                console.log("error")
+            else (console.log(`Generated logo.svg`))
+        });
+    }
+    )
+}
+
+init()
