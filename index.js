@@ -25,6 +25,10 @@ const imagePrompt = [{
 
 ];
 
+// Everything wrapped in an init function akin to last week.
+
+// Prompts the user with questions that we included in the imagePrompt object and then once the answers are provided, the function destructures the properties from the answers object. The createSVG function won't be called until we have completed the promise/answered all of the questions. 
+
 function init() {
     inquirer.prompt(imagePrompt).then((answers) => {
         const { character, color, shape } = answers;
@@ -37,9 +41,10 @@ function init() {
             else (console.log(`Generated logo.svg`))
         });
 
-        // I was able to get most of the formatting for the SVG formatting below from the mozilla tutorial. 
 
-        // The createSVG function below creates an SVG image taking the shape, color and 3 letter text that the user inputs and returns a string containing the elements required to draw the shape as well as the viewbox attribute, which scales the SVG element to have a width of 300 and a height of 200 (Mozilla viewBox documentation).
+        // The createSVG function below creates an SVG image taking the shape, color and 3 letter text that the user inputs and returns a string containing the elements required to draw the shape as well as the viewbox attribute, which scales the SVG element to have a width of 300 and a height of 200 (Mozilla viewBox documentation & Mozilla SVG Get Started Documentation).
+
+        // += could also be used here instead of the concat method to concatenate the strings
 
         function createSVG(characters, color, shape) {
             let svgString = '';
