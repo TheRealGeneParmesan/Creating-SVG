@@ -25,9 +25,9 @@ const imagePrompt = [{
 
 ];
 
-// Everything wrapped in an init function akin to last week.
+// Everything wrapped in an init function akin to last week to provide more control over how the code is executed.
 
-// Prompts the user with questions that we included in the imagePrompt object and then once the answers are provided, the function destructures the properties from the answers object. The createSVG function won't be called until we have completed the promise/answered all of the questions. 
+// The prompt method that we're using for the second week in a row prompts the user with questions to respond to that we included in the imagePrompt object and then once the answers are provided, the function destructures the properties from the answers object. The createSVG function won't be called until we have completed the promise/answered all of the questions. 
 
 function init() {
     inquirer.prompt(imagePrompt).then((answers) => {
