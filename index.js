@@ -39,7 +39,7 @@ function generateSVG() {
         };
 
         // Here we create a new instance of the shape based on the user input
-        const shapeProperties = new (shapeConstruct[shape])(color);
+        const shapeProperties = new (shapeConstruct[shape])(color, character);
 
         // We call the createSVG method on the shapeProperties object to create an SVG for the shape with the particular color and characters and assign it to the svgFile variable.
 
