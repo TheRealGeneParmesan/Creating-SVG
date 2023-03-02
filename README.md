@@ -10,7 +10,7 @@ An SVG file created using classes, inheritance and the Inquirer and Jest package
 - [Questions](#questions)
 - [License](#license)
 
-#Installation
+##Installation
 
 You must install the Jest and Inquirer Packages
 
