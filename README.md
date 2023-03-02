@@ -14,7 +14,7 @@
 
 You must install the Jest and Inquirer Packages
 
-##Usage
+## Usage
 
 - For this project I created a Shape class with subclasses of Circle, Square and Triangle
 - The Circle, Square and Triangle sublcasses inherited the properties and method of the Shape class
