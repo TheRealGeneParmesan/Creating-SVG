@@ -19,7 +19,7 @@ You must install the Jest and Inquirer Packages
 - For this project I created a Shape class with subclasses of Circle, Square and Triangle
 - The Circle, Square and Triangle sublcasses inherited the properties and method of the Shape class
 - I exported and tested the Circle, Square and Triangle methods with Jest to make sure that everything passed
-- I then imported everything from the Shapes.js folder into my Index.js folder and generated an SVG using the Inquirer package 
+- I then imported everything from the Shapes.js folder into my Index.js folder and generated an SVG 
 - When the script runs, the user is prompted with a series of questions asking and then based on the user's responses, an SVG file is created with the user's answered shape, color and characters (up to 3 letters).
 
 [svg_walkthrough](https://drive.google.com/file/d/17WGbprNn-sOm8WUn-TWNhL-U5tWO-AZ6/view)
