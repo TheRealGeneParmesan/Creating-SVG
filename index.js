@@ -42,7 +42,7 @@ function init() {
         });
 
 
-        // The createSVG function below creates an SVG image taking the shape, color and 3 letter text that the user inputs and returns a string containing the elements required to draw the shape as well as the viewbox attribute, which scales the SVG element to have a width of 300 and a height of 200 (Mozilla viewBox documentation & Mozilla SVG Get Started Documentation).
+        // The createSVG function below creates an SVG image taking the shape, color and 3 letter text that the user inputs and returns a string.
 
         // += could also be used here instead of the concat method to concatenate the strings
 
