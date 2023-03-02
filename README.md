@@ -6,7 +6,6 @@ An SVG file created using classes, inheritance and the Inquirer and Jest package
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Example of Functionality](#Example of Functionality)
 - [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
@@ -22,8 +21,6 @@ You must install the Jest and Inquirer Packages
 - I exported and tested the Circle, Square and Triangle methods with Jest to make sure that everything passed
 - I then imported everything from the Shapes.js folder into my Index.js folder and generated an SVG using the Inquirer package 
 - When the script runs, the user is prompted with a series of questions asking and then based on the user's responses, an SVG file is created with the user's answered shape, color and characters (up to 3 letters).
-
-#Example of Functionality 
 
 "C:\Users\Screw\Downloads\svg_walkthrough.webm"
 
