@@ -1,6 +1,6 @@
-##Jeremy's SVG Project
-
-An SVG file created using classes, inheritance and the Inquirer and Jest packages
+## Jeremy's SVG
+    
+    An SVG file created using classes, inheritance and the Inquirer and Jest packages
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@ An SVG file created using classes, inheritance and the Inquirer and Jest package
 - [Questions](#questions)
 - [License](#license)
 
-##Installation
+## Installation
 
 You must install the Jest and Inquirer Packages
 
