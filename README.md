@@ -22,7 +22,7 @@ You must install the Jest and Inquirer Packages
 - I then imported everything from the Shapes.js folder into my Index.js folder and generated an SVG using the Inquirer package 
 - When the script runs, the user is prompted with a series of questions asking and then based on the user's responses, an SVG file is created with the user's answered shape, color and characters (up to 3 letters).
 
-"C:\Users\Screw\Downloads\svg_walkthrough.webm"
+svg_walkthrough
 
 ## Tests
 
