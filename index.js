@@ -1,63 +1,61 @@
 //Packages needed for application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { Shape, Circle, Square, Triangle } = require('./lib/shapes')
 
-const imagePrompt = [{
-    type: 'input',
-    name: 'character',
-    message: "Please enter three characters:",
-    validate: (input) => input.length <= 3,
-},
+function generateSVG() {
+    const imagePrompt = [{
+        type: 'input',
+        name: 'character',
+        message: "Please enter three characters:",
+        validate: (input) => input.length <= 3,
+    },
 
-{
-    type: 'input',
-    name: 'color',
-    message: "Please enter the color for your shape (can use color keyword or hexadecimal):"
-},
+    {
+        type: 'input',
+        name: 'color',
+        message: "Please enter the color for your shape (can use color keyword or hexadecimal):",
+    },
 
-{
-    type: 'list',
-    name: 'shape',
-    message: "Which shape do you want to choose?",
-    choices: ['circle', 'triangle', 'square'],
-},
+    {
+        type: 'list',
+        name: 'shape',
+        message: "Which shape do you want to choose?",
+        choices: ['circle', 'triangle', 'square'],
+    }];
 
-
-];
-
-// Everything wrapped in an init function akin to last week to provide more control over how the code is executed.
-
-// The prompt method that we're using for the second week in a row prompts the user with questions to respond to that we included in the imagePrompt object and then once the answers are provided, the function destructures the properties from the answers object. The createSVG function won't be called until we have completed the promise/answered all of the questions. 
-
-function init() {
+    // We display the prompt to the user and store the answers in the answers object 
     inquirer.prompt(imagePrompt).then((answers) => {
-        const { character, color, shape } = answers;
-        const svgFile = createSVG(character, color, shape);
 
+        // We destructure the answers object to get the character, shape and color attributes
+        const { character, shape, color } = answers;
+
+        // We map the name of each shape to its respective class
+        const shapeConstruct = {
+            'shape': Shape,
+            'circle': Circle,
+            'triangle': Triangle,
+            'square': Square
+        };
+
+        // Here we create a new instance of the shape based on the user input
+        const shapeProperties = new (shapeConstruct[shape])(color);
+
+        // We call the createSVG method on the shapeProperties object to create an SVG for the shape with the particular color and characters and assign it to the svgFile variable.
+
+        const svgFile = shapeProperties.createSVG(character);
+
+        // We write the generated SVG code to logo.svg and log an error if it fails or `Generated logo.svg if it succeeds`
 
         fs.writeFile('./examples/logo.svg', svgFile, (err) => {
-            if (err)
-                console.log("error")
-            else (console.log(`Generated logo.svg`))
-        });
-
-
-        // The createSVG function below creates an SVG image taking the shape, color and 3 letter text that the user inputs and returns a string.
-
-        // += could also be used here instead of the concat method to concatenate the strings
-
-        function createSVG(characters, color, shape) {
-            let svgString = '';
-            if (shape === 'circle') {
-                svgString = svgString.concat(`<circle cx="150" cy="100" r="70" fill="${color}"/> <text x ="50%" y = "50%" text-anchor = "middle" fill = "white"> ${characters}</text>`);
-            } else if (shape === 'triangle') {
-                svgString = svgString.concat(`<polygon points="150, 18 244, 182 56, 182" fill ="${color}"/> <text x ="150" y="110" text-anchor="middle" fill = "white"> ${characters}</text>`);
-            } else if (shape === 'square') {
-                svgString = svgString.concat(`<rect x="90" y="40" width="120" height="120" fill="${color}"/> <text x = "50%" y = "50%" text-anchor="middle" fill= "white"> ${characters}</text>`);
+            if (err) {
+                console.log("Error writing SVG file", err);
+            } else {
+                console.log(`Generated logo.svg`);
             }
-            return `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">${svgString}</svg>`;
-        }
-    })
-}
+        });
+    });
 
-init()
+}
+// Starts the script
+generateSVG()

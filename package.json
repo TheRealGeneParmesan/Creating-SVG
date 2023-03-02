@@ -1,5 +1,30 @@
 {
+  "name": "createacircle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest lib/shapes.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRealGeneParmesan/Creating-SVG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheRealGeneParmesan/Creating-SVG/issues"
+  },
+  "homepage": "https://github.com/TheRealGeneParmesan/Creating-SVG#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.5"
+  },
+  "devDependencies": {
+    "jest": "^29.4.3"
   }
 }
